@@ -32,10 +32,19 @@ seaborn
 pickle
 
 Additionally, in order to execute the code, you must have downloaded the FakeNewsCorpus
-from: https://github.com/several27/FakeNewsCorpus/releases/tag/v1.0. Please note that 
+from: https://github.com/several27/FakeNewsCorpus/releases/tag/v1.0.
 The files downloaded from the previous link are split into nine compressed files.
 Which require a multi-part decompression tool such as 7z to extract.
 You will also need the LIAR dataset, from: https://www.cs.ucsb.edu/~william/data/liar_dataset.zip
+Please note that in order to run the provided jupyter notebooks, you must alter line 12:
+data = pd.read_csv('raw_shuffle_data_4GB.csv') in Part_1_pre.ipynb
+To accept the entire uncompressed FakeNewsCorpus dataset as a csv file.
+This is done by replacing line 12 with:
+data = pd.read_csv('news_cleaned_2018_02_13.csv')
+Futhermore, as the FakeNewsCorpus dataset is 29.322.513.705 bytes you may
+encounter issue as the dataset may be larger than your systems memory.
+This is why raw_shuffle_data_4GB.csv was chosen to be worked on, as it is a shuffled subset
+of the FakeNewsCorpus dataset.
 
 Installation:
 You can install the required libraries using pip by running the following command:
